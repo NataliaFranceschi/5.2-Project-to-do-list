@@ -1,6 +1,7 @@
 const buttonApagaTarefa = document.getElementById('remover-finalizados');
 const buttonAdicionar = document.getElementById('criar-tarefa');
 const buttonApagar = document.getElementById('apaga-tudo');
+const buttonRemoverSelecionado = document.getElementById('remover-selecionado');
 const input = document.getElementsByTagName('input')[0];
 const ol = document.getElementsByTagName('ol')[0];
 const tarefa = document.getElementsByClassName('tarefa');
@@ -61,3 +62,8 @@ function apagaTarefasCompleta() {
   }
 }
 buttonApagaTarefa.addEventListener('click', apagaTarefasCompleta);
+
+function removeItemSelecionado() {
+  document.querySelector('.selecionada').remove();
+}
+buttonRemoverSelecionado.addEventListener('click', removeItemSelecionado);
