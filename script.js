@@ -2,6 +2,8 @@ const buttonApagaTarefa = document.getElementById('remover-finalizados');
 const buttonAdicionar = document.getElementById('criar-tarefa');
 const buttonApagar = document.getElementById('apaga-tudo');
 const buttonRemoverSelecionado = document.getElementById('remover-selecionado');
+const buttonMoveCima = document.getElementById('mover-cima');
+const buttonMoveBaixo = document.getElementById('mover-baixo');
 const input = document.getElementsByTagName('input')[0];
 const ol = document.getElementsByTagName('ol')[0];
 const tarefa = document.getElementsByClassName('tarefa');
@@ -67,3 +69,19 @@ function removeItemSelecionado() {
   document.querySelector('.selecionada').remove();
 }
 buttonRemoverSelecionado.addEventListener('click', removeItemSelecionado);
+
+function itemSobe() {
+  const selecionada = document.querySelector('.selecionada');
+  const temp = selecionada.innerHTML;
+  selecionada.innerHTML = selecionada.previousElementSibling.innerHTML;
+  selecionada.previousElementSibling.innerHTML = temp;
+}
+buttonMoveCima.addEventListener('click', itemSobe);
+
+function itemDesce() {
+  const selecionada = document.querySelector('.selecionada');
+  const temp = selecionada.innerHTML;
+  selecionada.innerHTML = selecionada.nextElementSibling.innerHTML;
+  selecionada.nextElementSibling.innerHTML = temp;
+}
+buttonMoveBaixo.addEventListener('click', itemDesce);
