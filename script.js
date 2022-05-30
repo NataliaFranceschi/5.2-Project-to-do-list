@@ -17,7 +17,7 @@ function adicionaTarefa() {
 }
 
 buttonAdicionar.addEventListener('click', function() {
-  adicionaTarefa();
+adicionaTarefa();
 });
 
 function mudaCorItem() {
@@ -41,9 +41,9 @@ function tarefaCompleta(event) {
   event.target.style.textDecoration = 'line-through solid black';
   event.target.className = 'completed';
   event.target.style.backgroundColor = 'white';
-} else { event.target.style.textDecoration = 'none';
+  } else { event.target.style.textDecoration = 'none';
   event.target.className = 'tarefa selecionada';
-}
+  }
 }
 
 function apagaLista() {
