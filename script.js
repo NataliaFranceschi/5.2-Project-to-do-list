@@ -29,20 +29,22 @@ function adicionaClasse(event) {
   if (selecionada === null) {
     event.target.classList.add('selecionada');
     mudaCorItem();
+  } else {
+    selecionada.style.backgroundColor = 'white';
+    selecionada.classList.remove('selecionada');
+    event.target.classList.add('selecionada');
+    mudaCorItem();
   }
-  selecionada.style.backgroundColor = 'white';
-  selecionada.classList.remove('selecionada');
-  event.target.classList.add('selecionada');
-  mudaCorItem();
 }
 
 function tarefaCompleta(event) {
   if (event.target.className === 'tarefa selecionada') {
-  event.target.style.textDecoration = 'line-through solid black';
-  event.target.className = 'completed';
-  event.target.style.backgroundColor = 'white';
-  } else { event.target.style.textDecoration = 'none';
-  event.target.className = 'tarefa selecionada';
+    event.target.style.textDecoration = 'line-through solid black';
+    event.target.className = 'completed';
+    event.target.style.backgroundColor = 'white';
+  } else {
+    event.target.style.textDecoration = 'none';
+    event.target.className = 'tarefa selecionada';
   }
 }
 
