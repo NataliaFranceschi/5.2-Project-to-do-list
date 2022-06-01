@@ -4,6 +4,7 @@ const buttonApagar = document.getElementById('apaga-tudo');
 const buttonRemoverSelecionado = document.getElementById('remover-selecionado');
 const buttonMoveCima = document.getElementById('mover-cima');
 const buttonMoveBaixo = document.getElementById('mover-baixo');
+const buttonSalvar = document.getElementById('salvar-tarefas');
 const input = document.getElementsByTagName('input')[0];
 const ol = document.getElementsByTagName('ol')[0];
 const tarefa = document.getElementsByClassName('tarefa');
@@ -85,3 +86,20 @@ function itemDesce() {
   selecionada.nextElementSibling.innerHTML = temp;
 }
 buttonMoveBaixo.addEventListener('click', itemDesce);
+
+buttonSalvar.addEventListener('click', salvarItens);
+function salvarItens() {
+localStorage.setItem('lista', ol.innerHTML);
+}
+
+window.onload = function() {
+  const recuperandoObjeto = localStorage.getItem('lista');
+  const filhos = ol.children;
+  if (localStorage.getItem('lista')) {
+    ol.innerHTML = recuperandoObjeto;
+    for (let filho of filhos) {
+      filho.addEventListener('click', adicionaClasse);
+      filho.addEventListener('dblclick', tarefaCompleta);
+    }
+  }
+}
