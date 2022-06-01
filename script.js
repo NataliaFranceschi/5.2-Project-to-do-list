@@ -73,17 +73,13 @@ buttonRemoverSelecionado.addEventListener('click', removeItemSelecionado);
 
 function itemSobe() {
   const selecionada = document.querySelector('.selecionada');
-  const temp = selecionada.innerHTML;
-  selecionada.innerHTML = selecionada.previousElementSibling.innerHTML;
-  selecionada.previousElementSibling.innerHTML = temp;
+  ol.insertBefore(selecionada, selecionada.previousElementSibling);
 }
 buttonMoveCima.addEventListener('click', itemSobe);
 
 function itemDesce() {
   const selecionada = document.querySelector('.selecionada');
-  const temp = selecionada.innerHTML;
-  selecionada.innerHTML = selecionada.nextElementSibling.innerHTML;
-  selecionada.nextElementSibling.innerHTML = temp;
+  ol.insertBefore(selecionada.nextElementSibling, selecionada);
 }
 buttonMoveBaixo.addEventListener('click', itemDesce);
 
