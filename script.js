@@ -7,7 +7,7 @@ const buttonMoveBaixo = document.getElementById('mover-baixo');
 const buttonSalvar = document.getElementById('salvar-tarefas');
 const input = document.getElementsByTagName('input')[0];
 const ol = document.getElementsByTagName('ol')[0];
-const tarefa = document.getElementsByClassName('tarefa');
+let tarefa = document.getElementsByClassName('tarefa');
 const completa = document.getElementsByClassName('completed');
 
 function adicionaTarefa() {
@@ -73,14 +73,21 @@ buttonRemoverSelecionado.addEventListener('click', removeItemSelecionado);
 
 function itemSobe() {
   const selecionada = document.querySelector('.selecionada');
-  ol.insertBefore(selecionada, selecionada.previousElementSibling);
-}
+  if (selecionada !== tarefa[0] && selecionada) {
+      ol.insertBefore(selecionada, selecionada.previousElementSibling);
+      console.log(selecionada.previousElementSibling);
+    }
+  }
+
 buttonMoveCima.addEventListener('click', itemSobe);
 
 function itemDesce() {
   const selecionada = document.querySelector('.selecionada');
-  ol.insertBefore(selecionada.nextElementSibling, selecionada);
-}
+    if (selecionada !== tarefa[tarefa.length - 1] && selecionada) {
+      ol.insertBefore(selecionada.nextElementSibling, selecionada);
+    }
+  }
+
 buttonMoveBaixo.addEventListener('click', itemDesce);
 
 buttonSalvar.addEventListener('click', salvarItens);
