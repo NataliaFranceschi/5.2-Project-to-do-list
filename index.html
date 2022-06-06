@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -11,13 +12,17 @@
 <header>Minha Lista de Tarefas</header>
 <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
 <input id="texto-tarefa" type="text">
-<button id="criar-tarefa">Adicionar</button> 
-<button id="apaga-tudo">Apagar Lista</button>
-<button id="remover-finalizados">Apagar Tarefa Completa</button>
-<button id="remover-selecionado">Remover Selecionado</button>
-<button id="mover-cima">Mover para cima</button>
-<button id="mover-baixo">Mover para baixo</button>
-<button id="salvar-tarefas">Salvar</button>
+<div>
+    <button id="criar-tarefa" class="btn btn-primary">Adicionar</button> 
+    <button id="mover-cima" class="btn btn-primary">&#8593;</button>
+    <button id="mover-baixo" class="btn btn-primary">&#8595;</button>
+    <button id="salvar-tarefas" class="btn btn-primary">Salvar</button>
+</div>
+<div>
+    <button id="apaga-tudo" class="btn btn-danger">	&#11097; Lista</button>
+    <button id="remover-finalizados" class="btn btn-danger"> &#11097; Tarefa Completa</button>
+    <button id="remover-selecionado" class="btn btn-danger"> &#11097; Selecionado</button>
+</div>
 <ol id="lista-tarefas"></ol>
 <script src="script.js"></script>   
 </body>
