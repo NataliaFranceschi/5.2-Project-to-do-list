@@ -9,21 +9,22 @@
     <title>Document</title>
 </head>
 <body>
-<header>Minha Lista de Tarefas</header>
-<p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-<input id="texto-tarefa" type="text">
-<div>
-    <button id="criar-tarefa" class="btn btn-primary">Adicionar</button> 
-    <button id="mover-cima" class="btn btn-primary">&#8593;</button>
-    <button id="mover-baixo" class="btn btn-primary">&#8595;</button>
-    <button id="salvar-tarefas" class="btn btn-primary">Salvar</button>
-</div>
-<div>
-    <button id="apaga-tudo" class="btn btn-danger">	&#11097; Lista</button>
-    <button id="remover-finalizados" class="btn btn-danger"> &#11097; Tarefa Completa</button>
-    <button id="remover-selecionado" class="btn btn-danger"> &#11097; Selecionado</button>
-</div>
-<ol id="lista-tarefas"></ol>
-<script src="script.js"></script>   
+    <header>Minha Lista de Tarefas</header>
+    <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
+    <input id="texto-tarefa" type="text">
+    <div>
+        <button id="criar-tarefa" class="btn btn-primary">Adicionar</button> 
+        <button id="mover-cima" class="btn btn-primary"><i class="fa-solid fa-arrow-up"></i></button>
+        <button id="mover-baixo" class="btn btn-primary"><i class="fa-solid fa-arrow-down"></i></button>
+        <button id="salvar-tarefas" class="btn btn-primary">Salvar</button>
+    </div>
+    <div>
+        <button id="apaga-tudo" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i> Lista</button>
+        <button id="remover-finalizados" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i> Tarefa Completa</button>
+        <button id="remover-selecionado" class="btn btn-danger"><i class="fa-solid fa-delete-left"></i> Selecionado</button>
+    </div>
+    <ol id="lista-tarefas"></ol>
+    <script src="script.js"></script>   
+    <script src="https://kit.fontawesome.com/212467eae2.js" crossorigin="anonymous"></script>
 </body>
 </html>

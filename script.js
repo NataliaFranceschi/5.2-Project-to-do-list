@@ -7,7 +7,7 @@ const buttonMoveBaixo = document.getElementById('mover-baixo');
 const buttonSalvar = document.getElementById('salvar-tarefas');
 const input = document.getElementsByTagName('input')[0];
 const ol = document.getElementsByTagName('ol')[0];
-let tarefa = document.getElementsByClassName('tarefa');
+const tarefa = document.getElementsByClassName('tarefa');
 const completa = document.getElementsByClassName('completed');
 
 function adicionaTarefa() {
@@ -52,19 +52,20 @@ function tarefaCompleta(event) {
   }
 }
 
-function apagaLista() {
-  while (tarefa[0] !== undefined) {
-    tarefa[0].remove();
-  }
-}
-buttonApagar.addEventListener('click', apagaLista);
-
 function apagaTarefasCompleta() {
   while (completa[0] !== undefined) {
     completa[0].remove();
   }
 }
 buttonApagaTarefa.addEventListener('click', apagaTarefasCompleta);
+
+function apagaLista() {
+  while (tarefa[0] !== undefined) {
+    tarefa[0].remove();
+  }
+  apagaTarefasCompleta();
+}
+buttonApagar.addEventListener('click', apagaLista);
 
 function removeItemSelecionado() {
   document.querySelector('.selecionada').remove();
@@ -74,26 +75,26 @@ buttonRemoverSelecionado.addEventListener('click', removeItemSelecionado);
 function itemSobe() {
   const selecionada = document.querySelector('.selecionada');
   if (selecionada !== tarefa[0] && selecionada) {
-      ol.insertBefore(selecionada, selecionada.previousElementSibling);
-      console.log(selecionada.previousElementSibling);
-    }
+    ol.insertBefore(selecionada, selecionada.previousElementSibling);
+    console.log(selecionada.previousElementSibling);
   }
+}
 
 buttonMoveCima.addEventListener('click', itemSobe);
 
 function itemDesce() {
   const selecionada = document.querySelector('.selecionada');
-    if (selecionada !== tarefa[tarefa.length - 1] && selecionada) {
-      ol.insertBefore(selecionada.nextElementSibling, selecionada);
-    }
+  if (selecionada !== tarefa[tarefa.length - 1] && selecionada) {
+    ol.insertBefore(selecionada.nextElementSibling, selecionada);
   }
+}
 
 buttonMoveBaixo.addEventListener('click', itemDesce);
 
-buttonSalvar.addEventListener('click', salvarItens);
 function salvarItens() {
-localStorage.setItem('lista', ol.innerHTML);
+  localStorage.setItem('lista', ol.innerHTML);
 }
+buttonSalvar.addEventListener('click', salvarItens);
 
 window.onload = function() {
   const recuperandoObjeto = localStorage.getItem('lista');
@@ -105,4 +106,4 @@ window.onload = function() {
       filho.addEventListener('dblclick', tarefaCompleta);
     }
   }
-}
+};
