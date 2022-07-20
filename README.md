@@ -13,4 +13,4 @@ Projeto desenvolvido no curso da Trybe ao final do bloco 5* do Módulo 1 - Funda
  5.5.4 - (Bônus) Projeto - Adivinhe a Cor<br>
  5.5.5 - (Bônus) Projeto - Carta Misteriosa<br><br>
 
-No projeto <strong>Lista de tarefas</strong> foi desenvolvido um input para criação de uma lista de tarefas. Podem ser adicionados quantos itens forem necessários e cada um deles pode ser selecionado, marcado como realizado, mudado de posição e salvo. Se precisar apagar foram criadas as opção de apagar toda a lista, apenas os itens selecionados ou apenas os concluídos.
+No projeto <strong>Lista de tarefas</strong> foi desenvolvido um input para criação de uma lista de tarefas. Podem ser adicionados quantos itens forem necessários e cada um deles pode ser selecionado, marcado como realizado, mudado de posição e salvo. Se precisar apagar, foram criadas as opções de apagar toda a lista, apenas os itens selecionados ou apenas os concluídos.
